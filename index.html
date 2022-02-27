@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1>Code Quiz</h1>
+                <a id="start" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Start</a>
+            </div>
+            <div id="question_options" class="row hidden">
+            <div id="questionDiv" class="col s8 m4">Question</div>
+            <div id="OptionDiv"class="col s8 m4">Options</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <script>
+
+currentQuestion = 0
+
+
+let questions = [
+ {
+     ques: 'What is HTML?',
+     ops: ['HighText Machine Language', 'HyperText Markup Language', 'None of these'],
+     answer: 'HyperText Markup Language'
+ },
+ {
+     ques: 'What is CSS?',
+     ops: ['Cascade Style Sheet', 'Cascading Style Sheet'],
+     answer: 'Cascading Style Sheet'
+ }
+
+]
+
+
+const displayQuestion = () => {
+ document.getElementById("questionDiv").innerHTML = `
+ ${questions[currentQuestion].ques}
+ `
+ document.getElementById("OptionDiv").innerHTML = `
+ ${questions[currentQuestion].ops[0]}
+ `
+ ocument.getElementById("OptionDiv").innerHTML = `
+ ${questions[currentQuestion].ops[1]}
+ `
+ ocument.getElementById("OptionDiv").innerHTML = `
+ ${questions[currentQuestion].ops[2]}
+ `
+ }
+
+
+
+
+
+document.getElementById("start").addEventListener('click', event => {
+ document.getElementById('question_options').classList.remove('hidden')
+ })
+
+
+
+    </script>
+</body>
+</html>
